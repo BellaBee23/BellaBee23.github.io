@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Portfolio</title>
+    <link href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+    <!-- Add EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- EmailJS configuration -->
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            try {
+                const publicKey = '${process.env.EMAILJS_PUBLIC_KEY}';
+                emailjs.init(publicKey);
+                console.log('EmailJS initialized with public key:', publicKey.substring(0, 4) + '...');
+            } catch (error) {
+                console.error('EmailJS initialization failed:', error);
+            }
+        });
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Bella Rodriguez</a>
+            <div class="d-flex align-items-center me-2">
+                <button class="btn btn-link nav-link px-2 theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section d-flex align-items-center justify-content-center text-center">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <img src="https://assets.onecompiler.app/42v36gb5w/42v36cmzz/SENIOR%20pic%201.png" alt="Profile" class="img-fluid rounded-circle mb-4 profile-image">
+                        <h1 class="display-4 mb-4">Bella Rodriguez</h1>
+                        <p class="lead">Student Developer</p>
+                        <p class="mb-4">Passionate about creating fun and engaging games and websites.</p>
+                        <a href="#contact" class="btn btn-primary">Get in Touch</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-5 text-center">
+            <div class="container">
+                <h2 class="section-title mb-5">About Me</h2>
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <p class="lead mb-4">Current computer science student at UTSA applying to become a 2025 summer intern with a distinguished company to contribute my dedication, coding and attention to detail in the development of software applications and web development.</p>
+                        <p>Bachelor of Computer Science<br>
+                        University of Texas at San Antonio | 2023 - 2026 <br>
+                        GPA: 3.24/4</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-5 text-center">
+            <div class="container">
+                <h2 class="section-title mb-5">Skills</h2>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-4">
+                        <div class="card skill-card h-100">
+                            <div class="card-body">
+                                <i class="fas fa-code fa-2x mb-3"></i>
+                                <h3>Frontend</h3>
+                                <p>HTML5, CSS, JavaScript, Bootstrap</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card skill-card h-100">
+                            <div class="card-body">
+                                <i class="fas fa-server fa-2x mb-3"></i>
+                                <h3>Backend</h3>
+                                <p>Python, Node.js, SQL</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                                <div class="card skill-card h-100">
+                                    <div class="card-body">
+                                        <i class="fas fa-tools fa-2x mb-3"></i>
+                                        <h3>Certifications</h3>
+                                        <p>Html, Css, Javascript, Bootstrap, Adobe Premire, Adobe Photoshop, Pro-Tools, Microsoft Word, Microsoft Powerpoint, Microsoft Excel</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card skill-card h-100">
+                            <div class="card-body">
+                                <i class="fas fa-tools fa-2x mb-3"></i>
+                                <h3>Proficiencies</h3>
+                                <p>Web Development
+                                • Communication Skills
+                                • Intercultural Teamwork
+                                • Coding Fundamentals
+                                • Computational Thinking
+                                • Multitasking</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-5 text-center">
+            <div class="container">
+                <h2 class="section-title mb-5">Recent Projects</h2>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-6">
+                        <div class="card project-card h-100">
+                            <div class="card-body">
+                                <h3>Nail Website</h3>
+                                <p>A fullsatck website for nails that I make and sell, using Html and Css.</p>
+                                <div class="d-flex gap-2 justify-content-center">
+                                    <a href="#" class="btn btn-sm btn-secondary">Check it out</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card project-card h-100">
+                            <div class="card-body">
+                                <h3>Belle's UTSA Food Delivery</h3>
+                                <p>An app to utalize the students who order food through the school for pick and deliver it to them for profit using Html, Css, and Javascript.</p>
+                                <div class="d-flex gap-2 justify-content-center">
+                                    <a href="#" class="btn btn-sm btn-secondary">Check it out</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card project-card h-100">
+                            <div class="card-body">
+                                <h3>Game</h3>
+                                <p>TBA</p>
+                                <div class="d-flex gap-2 justify-content-center">
+                                    <a href="#" class="btn btn-sm btn-secondary">Check it out</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <br>
+                    <h2>Projects</h2> <br>
+                    <div class="col-md-6">
+                        <div class="card project-card h-100">
+                            <div class="card-body">
+                                <h3>The Lantana Alliance</h3>
+                                <p>A mock website made during my internship using Html and Css</p>
+                                <div class="d-flex gap-2 justify-content-center">
+                                    <a href="https://c6694176-8ae5-4edf-ac3f-38ef62513344-00-3u1yw3mlfa2p1.janeway.replit.dev/" class="btn btn-sm btn-secondary">Check it out</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card project-card h-100">
+                            <div class="card-body">
+                                <h3>Prime Timer Club</h3>
+                                <p>A website made during my internship that plays classic songs through the scale using Html, Css, and Javascript</p>
+                                <div class="d-flex gap-2 justify-content-center">
+                                    <a href="https://49443d70-b38c-46c3-8b17-34a0600d5d2b-00-3f5rv94f9g0fc.riker.replit.dev/" class="btn btn-sm btn-secondary">Check it out</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card project-card h-100">
+                            <div class="card-body">
+                                <h3>Purrfect Paws</h3>
+                                <p>A mock website made during my internship using Html and Css</p>
+                                <div class="d-flex gap-2 justify-content-center">
+                                    <a href="https://a975ca55-8ffb-4da6-b25e-4ac1c0c90aa2-00-lqbso1z7ki0z.picard.replit.dev/" class="btn btn-sm btn-secondary">Check it out</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card project-card h-100">
+                            <div class="card-body">
+                                <h3>Cool Bands</h3>
+                                <p>A website made during my internship that keeps list cool bands based on what the user inputs using Html, Css, and Javascript</p>
+                                <div class="d-flex gap-2 justify-content-center">
+                                    <a href="https://61fd1006-bdad-4aae-a0a3-df7603cfa8a0-00-1zl15yqqqnjo4.riker.replit.dev/" class="btn btn-sm btn-secondary">Check it out</a>   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card project-card h-100">
+                            <div class="card-body">
+                                <h3>Cosmetology website</h3>
+                                <p>a cosmetology website for a client using Html and Css, I still update it periodically.</p>
+                                <div class="d-flex gap-2 justify-content-center">
+                                    <a href="https://www.thegeneralsmp.com/" class="btn btn-sm btn-secondary">Check it out</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card project-card h-100">
+                            <div class="card-body">
+                                <h3>Tba</h3>
+                                <p>TBA</p>
+                                <div class="d-flex gap-2 justify-content-center">
+                                    <a href="#" class="btn btn-sm btn-secondary">Check it out</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card project-card h-100">
+                            <div class="card-body">
+                                <h3>TBA</h3>
+                                <p>TBA</p>
+                                <div class="d-flex gap-2 justify-content-center">
+                                    <a href="#" class="btn btn-sm btn-secondary">Check it out</a>
+                                   </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card project-card h-100">
+                            <div class="card-body">
+                                <h3>TBA</h3>
+                                <p>TBA</p>
+                                <div class="d-flex gap-2 justify-content-center">
+                                    <a href="#" class="btn btn-sm btn-secondary">Check it out</a>
+                                   </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card project-card h-100">
+                            <div class="card-body">
+                                <h3>TBA</h3>
+                                <p>TBA</p>
+                                <div class="d-flex gap-2 justify-content-center">
+                                    <a href="#" class="btn btn-sm btn-secondary">Check it out</a>
+                                   </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card project-card h-100">
+                            <div class="card-body">
+                                <h3>TBA</h3>
+                                <p>TBA</p>
+                                <div class="d-flex gap-2 justify-content-center">
+                                    <a href="#" class="btn btn-sm btn-secondary">Check it out</a>
+                                   </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-5 text-center">
+            <div class="container">
+                <h2 class="section-title mb-5">Contact Me</h2>
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <!-- Alert for form feedback -->
+                        <div id="formAlert" class="alert d-none" role="alert"></div>
+                        
+                        <form id="contactForm">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="name" name="name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                                <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                                <span class="button-text">Send Message</span>
+                            </button>
+                        </form>
+                        <div class="social-links mt-4">
+                            <a href="https://instagram.com/bella_rodriguez23/" class="btn btn-outline-primary mx-2">
+                                <i class="fab fa-instagram"></i> Instagram
+                            </a>
+                            <a href="https://linkedin.com/in/bella-rodriguez-187ab1292" class="btn btn-outline-primary mx-2">
+                                <i class="fab fa-linkedin"></i> LinkedIn
+                            </a>
+                            <a href="https://github.com/BellaBee23" class="btn btn-outline-primary mx-2">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="footer-separator">
+        <div class="separator-line">
+            <i class="fas fa-heart"></i>
+        </div>
+    </div>
+
+    <footer class="py-4">
+        <div class="container text-center">
+            <p>&copy; Copyright 2024
+
+            Built with ♡ by Bella Rodriguez</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
+
+    <script>
+        // EmailJS Service ID and Template ID
+        const serviceID = 'your_service_id';
+        const templateID = 'your_template_id';
+
+        // Get form elements
+        const contactForm = document.getElementById('contactForm');
+        const formAlert = document.getElementById('formAlert');
+        const buttonText = document.querySelector('.button-text');
+        const spinner = document.querySelector('.spinner-border');
+
+        // Form submission event listener
+        contactForm.addEventListener('submit', (event) => {
+            event.preventDefault(); // Prevent default form submission
+
+            // Disable submit button and show spinner
+            buttonText.classList.add('d-none');
+            spinner.classList.remove('d-none');
+
+            // Get form data
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            // Send email using EmailJS
+            emailjs.send(serviceID, templateID, {
+                name: name,
+                email: email,
+                message: message
+            })
+                .then((response) => {
+                    console.log('Email sent successfully:', response.status, response.text);
+                    formAlert.classList.remove('d-none');
+                    formAlert.textContent = 'Message sent successfully!';
+                    formAlert.classList.add('alert-success');
+                    resetForm(); // Reset the form
+                })
+                .catch((error) => {
+                    console.error('Email sending failed:', error);
+                    formAlert.classList.remove('d-none');
+                    formAlert.textContent = 'Oops! Something went wrong. Please try again later.';
+                    formAlert.classList.add('alert-danger');
+                    resetForm(); // Reset the form
+                });
+        });
+
+        // Function to reset the form
+        function resetForm() {
+            // Re-enable submit button and hide spinner
+            buttonText.classList.remove('d-none');
+            spinner.classList.add('d-none');
+
+            // Reset form fields
+            contactForm.reset();
+
+            // Remove alert after a short delay
+            setTimeout(() => {
+                formAlert.classList.add('d-none');
+                formAlert.textContent = '';
+                formAlert.classList.remove('alert-success');
+                formAlert.classList.remove('alert-danger');
+            }, 3000); // 3 seconds
+        }
+    </script>
