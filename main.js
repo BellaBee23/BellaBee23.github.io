@@ -3,17 +3,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const themeToggle = document.querySelector('.theme-toggle');
     const themeIcon = document.querySelector('.theme-toggle i');
     const html = document.documentElement;
-    
+
     // Load saved theme or default to dark
     const savedTheme = localStorage.getItem('theme') || 'dark';
     html.setAttribute('data-bs-theme', savedTheme);
     updateThemeIcon(savedTheme === 'dark');
-    
+
     // Theme toggle handler
     themeToggle.addEventListener('click', function() {
         const currentTheme = html.getAttribute('data-bs-theme');
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        
+
         html.setAttribute('data-bs-theme', newTheme);
         localStorage.setItem('theme', newTheme);
         updateThemeIcon(newTheme === 'dark');
@@ -45,9 +45,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Contact form handling
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize EmailJS
+    try {
+        emailjs.init(process.env.EMAILJS_PUBLIC_KEY);
+        console.log('EmailJS initialized successfully');
+    } catch (error) {
+        console.error('EmailJS initialization failed:', error);
+    }
+
     const contactForm = document.getElementById('contactForm');
     const formAlert = document.getElementById('formAlert');
-    
+
     if (!contactForm || !formAlert) {
         console.error('Contact form elements not found');
         return;
@@ -75,16 +83,13 @@ document.addEventListener('DOMContentLoaded', function() {
         e.preventDefault();
         showLoading(true);
 
-        const serviceId = '${process.env.EMAILJS_SERVICE_ID}';
-        const templateId = '${process.env.EMAILJS_TEMPLATE_ID}';
-
         const templateParams = {
             from_name: document.getElementById('name').value,
             from_email: document.getElementById('email').value,
             message: document.getElementById('message').value
         };
 
-        emailjs.send(serviceId, templateId, templateParams)
+        emailjs.send(process.env.EMAILJS_SERVICE_ID, process.env.EMAILJS_TEMPLATE_ID, templateParams)
             .then(function(response) {
                 console.log('Email sent successfully:', response);
                 showAlert('Your message has been sent successfully!', true);
