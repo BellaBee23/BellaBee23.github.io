@@ -1,3 +1,5 @@
+
+// Content of current main.js file
 document.addEventListener('DOMContentLoaded', function() {
     // Theme toggle functionality
     const themeToggleBtn = document.querySelector('.theme-toggle');
