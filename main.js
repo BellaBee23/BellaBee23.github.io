@@ -18,18 +18,8 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.setItem('theme', newTheme);
         updateThemeIcon(newTheme === 'dark');
     });
-});
 
-// Helper function to update theme icon
-function updateThemeIcon(isDark) {
-    const icon = document.querySelector('.theme-toggle i');
-    if (icon) {
-        icon.className = isDark ? 'fas fa-moon' : 'fas fa-sun';
-    }
-}
-
-// Navigation smooth scroll
-document.addEventListener('DOMContentLoaded', function() {
+    // Navigation smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
@@ -41,66 +31,30 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-});
 
-// Contact form handling
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize EmailJS
-    try {
-        emailjs.init(process.env.EMAILJS_PUBLIC_KEY);
-        console.log('EmailJS initialized successfully');
-    } catch (error) {
-        console.error('EmailJS initialization failed:', error);
-    }
-
+    // Contact form handling
     const contactForm = document.getElementById('contactForm');
     const formAlert = document.getElementById('formAlert');
 
-    if (!contactForm || !formAlert) {
-        console.error('Contact form elements not found');
-        return;
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                message: document.getElementById('message').value
+            };
+
+            alert('Thanks for your message! I will get back to you soon.');
+            contactForm.reset();
+        });
     }
-
-    function showLoading(loading) {
-        const submitButton = contactForm.querySelector('button[type="submit"]');
-        if (submitButton) {
-            submitButton.disabled = loading;
-            submitButton.innerHTML = loading ? 
-                '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Sending...' : 
-                'Send Message';
-        }
-    }
-
-    function showAlert(message, isSuccess) {
-        if (formAlert) {
-            formAlert.textContent = message;
-            formAlert.classList.remove('d-none', 'alert-success', 'alert-danger');
-            formAlert.classList.add(isSuccess ? 'alert-success' : 'alert-danger');
-        }
-    }
-
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        showLoading(true);
-
-        const templateParams = {
-            from_name: document.getElementById('name').value,
-            from_email: document.getElementById('email').value,
-            message: document.getElementById('message').value
-        };
-
-        emailjs.send(process.env.EMAILJS_SERVICE_ID, process.env.EMAILJS_TEMPLATE_ID, templateParams)
-            .then(function(response) {
-                console.log('Email sent successfully:', response);
-                showAlert('Your message has been sent successfully!', true);
-                contactForm.reset();
-            })
-            .catch(function(error) {
-                console.error('Email sending failed:', error);
-                showAlert('Failed to send message. Please try again later.', false);
-            })
-            .finally(function() {
-                showLoading(false);
-            });
-    });
 });
+
+// Helper function to update theme icon
+function updateThemeIcon(isDark) {
+    const icon = document.querySelector('.theme-toggle i');
+    if (icon) {
+        icon.className = isDark ? 'fas fa-moon' : 'fas fa-sun';
+    }
+}
